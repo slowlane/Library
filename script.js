@@ -1,3 +1,4 @@
+//Library array
 let myLibrary = [];
 
 //Book constructor
@@ -48,6 +49,7 @@ function render(){
         bookCard.appendChild(title);
         bookCard.appendChild(author);
         bookCard.appendChild(pages);
+
         content.appendChild(bookCard);
 
     }
@@ -83,3 +85,12 @@ document.getElementById("form").addEventListener("submit", e => {
     document.querySelector(".bg-modal").style.display = "none";
 
 })
+
+
+//Add books for testing purposes
+let book1 = new Book("The Hobbit", "Tolkien", 243);
+let book2 = new Book("The Hobbit", "Pirate Tolkien", 321);
+
+myLibrary.push(book1, book2);
+
+render();
