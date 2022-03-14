@@ -43,12 +43,35 @@ function render(){
 
         let pages = document.createElement("p");
         pages.innerText = "Pages: " + book.pages;
+        
+
+        //Fixing the read toggle
+        let readToggleDiv = document.createElement("div");
+
+        let readToggleLabel = document.createElement("label");
+        readToggleLabel.innerText = "Read";
+        readToggleLabel.setAttribute("for", "read-toggle");
+
+        let readToggle = document.createElement("INPUT");
+        readToggle.setAttribute("type", "checkbox");
+        readToggle.id = "read-toggle";
+
+        readToggle.addEventListener("click", e => {
+            e.target.parentElement.parentElement.classList.toggle("read-book");
+            console.log("Hi!");
+        })
+
 
         //Add contents of card, and add card to the content div
         bookCard.appendChild(bookHeader);
         bookCard.appendChild(title);
         bookCard.appendChild(author);
         bookCard.appendChild(pages);
+        bookCard.appendChild(readToggleDiv);
+        
+        readToggleDiv.appendChild(readToggleLabel);
+        readToggleDiv.appendChild(readToggle);
+        // bookCard.appendChild(readToggle);
 
         content.appendChild(bookCard);
 

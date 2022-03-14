@@ -78,7 +78,7 @@ header button {
     /* margin-right: 5%; */
 }
 
-input {
+.modal-content input {
     width: 70%;
     display: block;
     margin: 5px auto;
@@ -119,11 +119,11 @@ input {
     flex-direction: column;
     width: 300px;
     height: 225px;
-    /* background-color: rgb(243, 214, 214); */
     background: linear-gradient(150deg, rgba(25, 24, 29, 0.932), rgb(136, 173, 197) 100%);
-    /* padding: 5px; */
     gap: 15px;
     box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative;
 
 }
 
@@ -147,4 +147,35 @@ input {
     font-size: 2.5rem;
     font-weight: 700;
     left: 50%;
+}
+
+.card div {
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+    /* align-self: flex-end; */
+    padding: 10px;
+    transform: scale(2.5);
+    /* font-size: 30px; */
+
+}
+
+.card div label, input {
+
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+
+.card div label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.918);
+}
+
+.read-book {
+    background-color: white;
+    background: linear-gradient(150deg, rgba(158, 137, 243, 0.932), rgb(61, 224, 83) 100%);
+
 }
