@@ -101,6 +101,13 @@ function createCards() {
             e.target.parentElement.parentElement.classList.toggle("read-book");
         })
 
+        let removeButton = document.createElement("div");
+        removeButton.innerHTML = "+";
+        removeButton.className = "delete";
+        removeButton.addEventListener("click", e => {
+            deleteCard(e.target.parentElement);
+        });
+
 
         //Add contents of card, and add card to the content div
         bookCard.appendChild(bookHeader);
@@ -108,6 +115,7 @@ function createCards() {
         bookCard.appendChild(author);
         bookCard.appendChild(pages);
         bookCard.appendChild(readToggleDiv);
+        bookCard.appendChild(removeButton);
         
         readToggleDiv.appendChild(readToggleLabel);
         readToggleDiv.appendChild(readToggle);
@@ -116,4 +124,16 @@ function createCards() {
         content.appendChild(bookCard);
 
     }
+}
+
+function deleteCard(bookToRemove){
+    for(let i = 0; i < myLibrary.length; i++){
+        if(bookToRemove.childNodes[1].innerHTML.substring(8) === myLibrary[i].author &&
+            bookToRemove.childNodes[2].innerHTML.substring(7) === myLibrary[i].title &&
+            bookToRemove.childNodes[3].innerHTML.substring(7) === myLibrary[i].pages.toString()){
+                myLibrary.splice(i, 1);
+            }
+    }
+
+    render();
 }

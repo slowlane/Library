@@ -8,7 +8,7 @@
 body {
     width: 100%;
     height: 100%;
-    background-color: rgba(43, 41, 40, 0.6);
+    background-color: rgba(0, 0, 0, 0.925);
 }
 
 header {
@@ -94,34 +94,46 @@ header button {
     cursor: pointer;
 }
 
+h1 {
+    text-align: center;
+    font-size: 5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
 .content-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px;
+    margin: 0 auto;
     width: 100%;
     height: 100%;
 }
 
 #content {
+    margin-top: 10%;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(auto-fit, 225px);
     justify-content: center;
     align-items: center;
-
-    max-width: 960px;
+    background: linear-gradient(150deg, rgba(18, 17, 22, 0.932), rgb(50, 37, 53) 100%);
+    width: 55vw;
+    height: clamp(30vh, 50vh, 80vh);
     gap: 75px;
+    box-shadow: 5px 5px 15px 15px rgba(255, 255, 255, 0.842);
+    padding: 30px;
+    overflow: auto;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 225px;
-    background: linear-gradient(150deg, rgba(25, 24, 29, 0.932), rgb(136, 173, 197) 100%);
+    width: 330px;
+    height: 235px;
+    background: linear-gradient(150deg, rgba(23, 23, 24, 0.932), rgb(57, 113, 150) 100%);
     gap: 15px;
-    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 20px 8px rgba(255, 255, 255, 0.418);
     border-radius: 5px;
     position: relative;
 
@@ -137,9 +149,9 @@ header button {
 .card h2 {
     display: block;
     height: 25%;
-    padding: 0;
+    padding: 3%;
     margin: 0;
-    text-align: center;
+    text-align: start;
     /* background-color: rgba(8, 4, 0, 0.822); */
     /* background: linear-gradient(150deg, rgba(242, 238, 253, 0.671), rgb(3, 0, 0) 100%); */
 
@@ -149,16 +161,14 @@ header button {
     left: 50%;
 }
 
-.card div {
+.card div:nth-child(5) {
     display: flex;
     gap: 3px;
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     right: 35px;
-    /* align-self: flex-end; */
     padding: 10px;
     transform: scale(2.5);
-    /* font-size: 30px; */
 
 }
 
@@ -176,6 +186,18 @@ header button {
 
 .read-book {
     background-color: white;
-    background: linear-gradient(150deg, rgba(149, 179, 128, 0.932), rgb(61, 224, 83) 100%);
+    background: linear-gradient(150deg, rgba(149, 179, 128, 0.932), rgb(48, 177, 65) 100%);
 
+}
+
+.delete {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 52px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    /* background-color: rgba(255, 0, 0, 0.822); */
+    color: red;
+    border-radius: 8px;
 }
